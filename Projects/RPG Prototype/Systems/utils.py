@@ -6,16 +6,13 @@ def loading_time(text, amount):
     time.sleep(amount)
 def intro_cutscene(type):
     if "new" in type:
-        print("- WELCOME . . . TO THIS EXCITING NEW ADVENTURE \n")
-        loading_time("", speed["moderate"])
-        print("- BEFORE WE CONTINUE, I'D LIKE TO KNOW MORE ABOUT YOU...\n")
-        loading_time("", speed["moderate"])
+        loading_time("\n- WELCOME . . . TO THIS EXCITING NEW ADVENTURE \n", speed["moderate"])
+        loading_time("- BEFORE WE CONTINUE, I'D LIKE TO KNOW MORE ABOUT YOU...", speed["moderate"])
+        loading_time("Loading. . .", speed["slow"])
 
         playerData["NAME"] = input("* * Type your username: * *\n")
-        loading_time("", speed["moderate"])
 
-        print("     EXCELLENT . . . \n- SHALL WE CONTINUE?")
-        loading_time("", speed["slow"])
+        loading_time("\n     EXCELLENT . . . \n- SHALL WE CONTINUE?", speed["slow"])
     elif "old" in type:
         print(f"- WELCOME BACK, {playerData["NAME"]}") 
-        loading_time("", speed["moderate"])
+        loading_time("Loading. . .", speed["slow"])

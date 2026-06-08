@@ -10,8 +10,8 @@ def load_save_data():
                 if key in ("HEALTH", "GOLD"):
                     value = int(value)
                 playerData[key] = value
-        print("Succesfully Found & Loaded Save File")
-        loading_time("", speed["moderate"])
+        print("\nSuccesfully Found & Loaded Save File")
+        loading_time("Loading. . .", speed["slow"])
 
         intro_cutscene("old")
     else:
