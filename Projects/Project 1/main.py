@@ -1,3 +1,9 @@
+# Read Obsidian notes to know what to do next!!!!
+
+
+
+
+
 # -- Importing Modules
 import os
 import time
