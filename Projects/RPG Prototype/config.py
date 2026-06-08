@@ -1,0 +1,14 @@
+# -- Main Variables
+isRunning = True
+saveFilePath = "Projects/RPG Prototype/save_file.txt"
+playerData = {
+    "NAME" : "",
+    "HEALTH" : 100,
+    "GOLD" : 0,
+    "INVENTORY" : []
+}
+speed = {
+    "fast" : 0.7,
+    "moderate" : 1.5,
+    "slow" : 2.25
+}
