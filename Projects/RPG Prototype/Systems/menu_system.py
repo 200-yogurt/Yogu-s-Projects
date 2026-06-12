@@ -7,13 +7,21 @@ def display_stats():
 
     for key, value in playerData.items():
         print(f"{key} : {value}")
+
+def display_inventory():
+    narrate("- HAVE A LOOK AT YOUR INVENTORY . . .\n", speed["fast"])
+
+    for value in playerData["inventory"]:
+        print(f"{value}\n")
+
+
 def rest():
     restGoldCost = 10
     restHealAmount = 25 # Adding unique variables for the Rest feature since I plan to expand further upon this in the future
 
-    if playerData["GOLD"] >= restGoldCost:
-        playerData["HEALTH"] += restHealAmount 
-        playerData["GOLD"] = playerData["GOLD"] - restGoldCost 
+    if playerData["stats"]["GOLD"] >= restGoldCost:
+        playerData["stats"]["HEALTH"] += restHealAmount 
+        playerData["stats"]["GOLD"] = playerData["stats"]["GOLD"] - restGoldCost 
 
         print("\nSuccesfully Rested")
     else:
@@ -59,7 +67,7 @@ def quit():
 
 def menu_loop():
     print(f"""
-- WELCOME TO THE MENU, {playerData["NAME"]}
+- WELCOME TO THE MENU, {playerData["stats"]["NAME"]}
 
     1- View Stats
     2- Rest (costs 10$)
