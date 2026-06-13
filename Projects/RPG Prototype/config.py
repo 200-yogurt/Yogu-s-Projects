@@ -8,7 +8,6 @@ playerData = {
         "GOLD" : 0,
     },
     "inventory" : [
-        "Test Item"
     ]
     
 }
