@@ -9,7 +9,7 @@ def explore():
         randomNum = random.randint(0, 50)
 
         if randomNum > 0:
-            playerData["GOLD"] += randomNum
+            playerData["stats"]["GOLD"] += randomNum
 
             print("You found Gold!")
             narrate("Loading. . .", speed["fast"])
@@ -20,10 +20,10 @@ def explore():
     def lose_health():
         narrate("\nYou explored in the wilderness and...", speed["slow"])
 
-        randomNum = random.randint(0, playerData["HEALTH"])
+        randomNum = random.randint(0, playerData["stats"]["HEALTH"])
 
         if randomNum > 0:
-            playerData["HEALTH"] -= randomNum
+            playerData["stats"]["HEALTH"] -= randomNum
 
             print("You got attacked by a creature!")
             narrate("Loading. . .", speed["fast"])
@@ -33,9 +33,9 @@ def explore():
     def healing_herb():
         narrate("\nYou explored in the wilderness and...", speed["slow"])
 
-        randomNum = round(random.uniform(1, playerData["HEALTH"] * 0.87))
+        randomNum = round(random.uniform(1, playerData["stats"]["HEALTH"] * 0.87))
 
-        playerData["HEALTH"] += randomNum
+        playerData["stats"]["HEALTH"] += randomNum
 
         print("You found a Healing Herb!")
         narrate("Loading. . .", speed["fast"])
