@@ -24,6 +24,9 @@ def rest():
     if playerData["stats"]["GOLD"] >= restGoldCost:
         playerData["stats"]["HEALTH"] += restHealAmount 
         playerData["stats"]["GOLD"] = playerData["stats"]["GOLD"] - restGoldCost 
+    if playerData["stats"]["GOLD"] >= restGoldCost:
+        playerData["stats"]["HEALTH"] += restHealAmount 
+        playerData["stats"]["GOLD"] = playerData["stats"]["GOLD"] - restGoldCost 
 
         print("\nSuccesfully Rested")
     else:
@@ -52,6 +55,7 @@ def quit():
 def menu_loop():
 
     print(f"""
+- WELCOME TO THE MENU, {playerData["stats"]["NAME"]}
 - WELCOME TO THE MENU, {playerData["stats"]["NAME"]}
 
     1- View Stats

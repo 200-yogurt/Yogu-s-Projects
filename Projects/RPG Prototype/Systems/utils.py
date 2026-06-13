@@ -12,6 +12,7 @@ def intro_cutscene(type):
         narrate("Loading. . .", speed["fast"])
 
         playerData["stats"]["NAME"] = input("* * Type your username: * *\n")
+        playerData["stats"]["NAME"] = input("* * Type your username: * *\n")
 
         narrate("\n     EXCELLENT . . . \n- SHALL WE CONTINUE?", speed["slow"])
     elif "old" in type:
