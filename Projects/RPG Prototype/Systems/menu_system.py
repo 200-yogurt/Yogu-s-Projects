@@ -1,7 +1,9 @@
 from config import *
 from Systems.utils import narrate
+from Systems.player import inventory_add
 from Systems.explore_system import explore
 from Systems.save_system import save_player_data
+
 
 def display_stats():
 
@@ -12,10 +14,13 @@ def display_stats():
         
 def display_inventory():
 
-    narrate("- HAVE A PEEK AT YOUR INVENTORY . . .\n", speed["fast"])
+    if playerData["inventory"] == True:
+        narrate("- HAVE A PEEK AT YOUR INVENTORY . . .\n", speed["fast"])
 
-    for value in playerData["inventory"]:
-        print(f"{value}")
+        for value in playerData["inventory"]:
+            print(f"{value}")
+    else:
+        narrate(". . .You don't have any items on your inventory\n", speed["fast"])
 
 def rest():
     
@@ -59,8 +64,8 @@ def menu_loop():
 
     print(f"""
 - WELCOME TO THE MENU, {playerData["stats"]["NAME"]}
-- WELCOME TO THE MENU, {playerData["stats"]["NAME"]}
 
+    0.0 - Inventory Add
     1- View Stats
     2- View Inventory
     3- Rest (costs 10$)
@@ -75,6 +80,8 @@ def menu_loop():
     choice = input("Please choose a number between 1 and 5 in order to continue: \n").strip()
     if choice == "1":
         display_stats()
+    elif choice == "0":
+        inventory_add(21)
     elif choice == "2":
         display_inventory()
     elif choice == "3":

@@ -7,6 +7,7 @@ def narrate(text, amount):
     time.sleep(amount)
     
 def intro_cutscene(type):
+    
     if "new" in type:
 
         narrate("\n- WELCOME . . . TO THIS EXCITING NEW ADVENTURE \n", speed["moderate"])
@@ -14,7 +15,7 @@ def intro_cutscene(type):
         narrate("Loading. . .", speed["fast"])
 
         playerData["stats"]["NAME"] = input("* * Type your username: * *\n")
-        playerData["stats"]["NAME"] = input("* * Type your username: * *\n")
+        print(playerData["stats"]["NAME"])
 
         narrate("\n     EXCELLENT . . . \n- SHALL WE CONTINUE?", speed["slow"])
     elif "old" in type:

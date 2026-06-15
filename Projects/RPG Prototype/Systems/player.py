@@ -2,6 +2,11 @@ import os
 from config import *
 from Systems.utils import narrate
 
+def inventory_add(item):
+
+    item = str(item)
+    playerData["inventory"] = item
+
 def is_player_alive():
 
     if playerData["stats"]["HEALTH"] > 0:
