@@ -1,3 +1,4 @@
+import config
 from config import *
 from Systems.utils import narrate
 from Systems.player import inventory_add
@@ -9,30 +10,29 @@ def display_stats():
 
     narrate("- HAVE A PEEK AT YOUR STATS . . .\n", speed["fast"])
 
-    for key, value in playerData["stats"].items():
+    for key, value in config.playerData["stats"].items():
         print(f"{key} : {value}")
         
 def display_inventory():
 
-    if playerData["inventory"] == True:
-        narrate("- HAVE A PEEK AT YOUR INVENTORY . . .\n", speed["fast"])
+    narrate("- HAVE A PEEK AT YOUR INVENTORY . . .\n", speed["fast"])
 
-        for value in playerData["inventory"]:
-            print(f"{value}")
-    else:
-        narrate(". . .You don't have any items on your inventory\n", speed["fast"])
+    for value in config.playerData["inventory"]:
+        print(f"{value}")
 
 def rest():
     
+    stats = config,playerData["stats"]
+
     restGoldCost = 10
     restHealAmount = 25 # Adding unique variables for the Rest feature since I plan to expand further upon this in the future
 
-    if playerData["stats"]["GOLD"] >= restGoldCost:
-        playerData["stats"]["HEALTH"] += restHealAmount 
-        playerData["stats"]["GOLD"] = playerData["stats"]["GOLD"] - restGoldCost 
-    if playerData["stats"]["GOLD"] >= restGoldCost:
-        playerData["stats"]["HEALTH"] += restHealAmount 
-        playerData["stats"]["GOLD"] = playerData["stats"]["GOLD"] - restGoldCost 
+    if stats["GOLD"] >= restGoldCost:
+        stats["HEALTH"] += restHealAmount 
+        stats["GOLD"] = stats["GOLD"] - restGoldCost 
+    if stats["GOLD"] >= restGoldCost:
+        stats["HEALTH"] += restHealAmount 
+        stats["GOLD"] = stats["GOLD"] - restGoldCost 
 
         print("\nSuccesfully Rested")
     else:
@@ -63,7 +63,7 @@ def quit():
 def menu_loop():
 
     print(f"""
-- WELCOME TO THE MENU, {playerData["stats"]["NAME"]}
+- WELCOME TO THE MENU, {    config.playerData["stats"]["NAME"]   }
 
     0.0 - Inventory Add
     1- View Stats
@@ -77,7 +77,7 @@ def menu_loop():
           """)
     narrate("Loading. . .", speed["fast"])
 
-    choice = input("Please choose a number between 1 and 5 in order to continue: \n").strip()
+    choice = input("Please choose a number between 1 and 6 in order to continue: \n").strip()
     if choice == "1":
         display_stats()
     elif choice == "0":

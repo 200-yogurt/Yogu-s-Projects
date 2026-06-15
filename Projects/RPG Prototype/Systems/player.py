@@ -1,15 +1,16 @@
 import os
+import config
 from config import *
 from Systems.utils import narrate
 
 def inventory_add(item):
 
     item = str(item)
-    playerData["inventory"] = item
+    config.playerData["inventory"] = item
 
 def is_player_alive():
 
-    if playerData["stats"]["HEALTH"] > 0:
+    if config.playerData["stats"]["HEALTH"] > 0:
         isAlive = True
     else:
         isAlive = False
@@ -20,18 +21,25 @@ def game_over():
 
     narrate(".....", speed["fast"])
     narrate("- IT SEEMS LIKE WE LOST YOU... \n", speed["moderate"])
-    print(f"- {playerData["stats"]["NAME"]}! IT WAS NICE TO MEET YOU!")
+    
+    print(f"- {     config.playerData["stats"]["NAME"]      }! IT WAS NICE TO MEET YOU!")
     narrate(".....", speed["moderate"])
 
     narrate("\n\n  .  .  .  Game Over  .  .  . \n\n", speed["slow"])
 
     choice = input("Would you like to start over?  (y/n)\n")
     narrate("Loading. . .", speed["slow"])
+    
     if "y" in choice:
+    
         if os.path.exists(saveFilePath):
+
             os.remove(saveFilePath)
         print("\nCome back soon. . .\n")
+
     elif "n" in choice:
+
         narrate(". . .", speed["moderate"])
         print("But aren't you dead?")
+
     narrate("", speed["slow"])
