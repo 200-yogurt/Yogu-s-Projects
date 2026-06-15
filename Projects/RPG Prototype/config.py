@@ -1,6 +1,6 @@
 # -- Main Variables
 isRunning = True
-saveFilePath = "Projects/RPG Prototype/save_file.txt"
+saveFilePath = "Projects/RPG Prototype/Data/save_file.txt"
 playerData = {
     "stats" : {
         "NAME" : "",
@@ -9,7 +9,6 @@ playerData = {
     },
     "inventory" : [
     ]
-    
 }
 speed = {
     "fast" : 0.7,

@@ -2,8 +2,10 @@ import time
 from config import *
 
 def narrate(text, amount):
+
     print(text)
     time.sleep(amount)
+    
 def intro_cutscene(type):
     if "new" in type:
 

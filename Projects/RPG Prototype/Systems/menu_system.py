@@ -9,6 +9,7 @@ def display_stats():
 
     for key, value in playerData["stats"].items():
         print(f"{key} : {value}")
+        
 def display_inventory():
 
     narrate("- HAVE A PEEK AT YOUR INVENTORY . . .\n", speed["fast"])
@@ -31,6 +32,7 @@ def rest():
         print("\nSuccesfully Rested")
     else:
         print("- YOU DON'T SEEM TO HAVE ENOUGH RESOURCES, ADVENTURER...")
+
 def save_progress():
 
     choice = input(f"- ARE YOU SURE YOU WANT TO REWRITE YOUR SAVE, ADVENTURER?  (y/n)\n").strip().lower()
@@ -44,6 +46,7 @@ def save_progress():
         print("Aborted")
     else:
         print("Invalid Option")
+
 def quit():
 
     narrate("- UNTIL NEXT TIME, ADVENTURER", speed["slow"])

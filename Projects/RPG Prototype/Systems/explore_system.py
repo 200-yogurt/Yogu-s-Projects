@@ -3,7 +3,9 @@ from config import *
 from Systems.utils import narrate
 
 def explore():
+
     def find_gold():
+
         narrate("\nYou explored in search for Gold and...", speed["slow"])
 
         randomNum = random.randint(0, 50)
@@ -17,7 +19,9 @@ def explore():
         else:
             narrate("found nothing...", speed["moderate"])
             print("- . . . UNLUCKY")
+
     def lose_health():
+
         narrate("\nYou explored in the wilderness and...", speed["slow"])
 
         randomNum = random.randint(0, playerData["stats"]["HEALTH"])
@@ -30,7 +34,9 @@ def explore():
             print(f"- OUCH. . . YOU LOST {randomNum} HP")
         else:
             print("Nothing happened")
+
     def healing_herb():
+
         narrate("\nYou explored in the wilderness and...", speed["slow"])
 
         randomNum = round(random.uniform(1, playerData["stats"]["HEALTH"] * 0.87))
@@ -40,7 +46,9 @@ def explore():
         print("You found a Healing Herb!")
         narrate("Loading. . .", speed["fast"])
         print(f"- CONGRATULATIONS ADVENTURER, YOU GAINED {randomNum} HP")
+    
     def nothing_happens():
+        
         narrate("\nYou explored...", speed["slow"])
         print("but nothing relevant happened")
 
