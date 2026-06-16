@@ -7,9 +7,16 @@ playerData = {
         "HEALTH" : 100,
         "GOLD" : 0,
     },
-    "inventory" : [
-        "Tetonium"
-    ]
+    "inventory" : {
+        "Test Item" : 1
+    }
+}
+items = {
+    "testItem" : {
+        "name" : "Test Item",
+        "value" : 20,
+        "heal" : 20
+    }
 }
 speed = {
     "fast" : 0.7,
