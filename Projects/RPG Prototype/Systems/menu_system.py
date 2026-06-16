@@ -17,8 +17,8 @@ def display_inventory():
 
     narrate("- HAVE A PEEK AT YOUR INVENTORY . . .\n", speed["fast"])
 
-    for value in config.playerData["inventory"]:
-        print(f"{value}")
+    for item, amount in config.playerData["inventory"].items():
+        print(f"{item} x{amount}")
 
 def rest():
     
@@ -81,7 +81,8 @@ def menu_loop():
     if choice == "1":
         display_stats()
     elif choice == "0":
-        inventory_add(21)
+        inventory_add("Test Item")
+        print(config.playerData["inventory"])
     elif choice == "2":
         display_inventory()
     elif choice == "3":

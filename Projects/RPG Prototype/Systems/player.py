@@ -5,7 +5,6 @@ from Systems.utils import narrate
 
 def inventory_add(item):
 
-    item = str(item)
     config.playerData["inventory"] = item
 
 def is_player_alive():
